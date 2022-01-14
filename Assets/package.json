@@ -1,0 +1,13 @@
+{
+    "name": "com.nouranium.messaging",
+    "displayName": "Nouranium Messaging",
+    "version": "0.1.0",
+    "unity": "2020.3",
+    "description": "Fast and simple message system for Unity3d game engine.",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/nouranium-vault/messaging/issues"
+    },
+    "homepage": "https://github.com/nouranium-vault/messaging#readme",
+    "category": "Utility",
+}

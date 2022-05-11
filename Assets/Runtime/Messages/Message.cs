@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using Sirenix.OdinInspector;
 
 namespace Nouranium
 {
@@ -26,6 +27,7 @@ namespace Nouranium
             Server.RemoveListener(messageId, action);
         }
 
+        [Button]
         public void Send()
         {
             if (messageId < 0)

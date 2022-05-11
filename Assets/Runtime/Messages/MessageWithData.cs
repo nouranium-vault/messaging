@@ -1,11 +1,14 @@
 using UnityEngine;
 using UnityEngine.Events;
+using Sirenix.OdinInspector;
+
 
 namespace Nouranium
 {
     public class MessageWithData<T> : ScriptableObject
     {
         private int messageId = -1;
+        public T value;
 
         public void OnEnable()
         {
@@ -31,6 +34,11 @@ namespace Nouranium
                 return;
 
             Server.Send(messageId, value);
+        }
+
+        [Button]
+        public void Send(){
+            Send(value);
         }
     }
 }

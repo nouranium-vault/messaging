@@ -1,22 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Nouranium;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class MessageListener : MonoBehaviour
+namespace Nouranium
 {
-    [SerializeField] private Message message;
-    public UnityEvent onListen;
-
-    private void Awake()
+    [System.Serializable]
+    public class MessageListener : IListener
     {
-        message.StartListening(OnListen);
-    }
+        [SerializeField] private Message message;
+        public UnityEvent onListen;
 
-    private void OnListen()
-    {
-        onListen.Invoke();
+        public void Init()
+        {
+            message.StartListening(OnListen);
+        }
+
+        private void OnListen()
+        {
+            onListen.Invoke();
+        }
     }
 }

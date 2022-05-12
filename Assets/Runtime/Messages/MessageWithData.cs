@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
+#if Sirenix
 using Sirenix.OdinInspector;
+#endif
 
 
 namespace Nouranium
@@ -35,10 +37,12 @@ namespace Nouranium
 
             Server.Send(messageId, value);
         }
-
+        
+        #if Sirenix
         [Button]
         public void Send(){
             Send(value);
         }
+        #endif
     }
 }

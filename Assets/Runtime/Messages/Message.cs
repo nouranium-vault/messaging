@@ -26,6 +26,8 @@ namespace Nouranium
             Server.RemoveListener(messageId, action);
         }
 
+    #if ODIN_INSPECTOR || ODIN_INSPECTOR_3
+        [Sirenix.OdinInspector.Button]
         public void Send()
         {
             if (messageId < 0)
@@ -33,5 +35,6 @@ namespace Nouranium
 
             Server.Send(messageId);
         }
+    #endif
     }
 }

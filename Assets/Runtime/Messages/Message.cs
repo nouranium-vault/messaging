@@ -26,14 +26,19 @@ namespace Nouranium
             Server.RemoveListener(messageId, action);
         }
 
-    #if ODIN_INSPECTOR || ODIN_INSPECTOR_3
-        [Sirenix.OdinInspector.Button]
         public void Send()
         {
             if (messageId < 0)
                 return;
 
             Server.Send(messageId);
+        }
+
+    #if ODIN_INSPECTOR || ODIN_INSPECTOR_3
+        [Sirenix.OdinInspector.Button("Send")]
+        public void SendButton()
+        {
+            Send();
         }
     #endif
     }

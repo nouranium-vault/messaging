@@ -6,7 +6,11 @@ namespace Nouranium
     public class MessageWithData<T> : ScriptableObject
     {
         private int messageId = -1;
+
+        #if ODIN_INSPECTOR || ODIN_INSPECTOR_3
         public T value;
+        #endif
+
 
         public void OnEnable()
         {
@@ -35,11 +39,12 @@ namespace Nouranium
             Server.Send(messageId, value);
         }
         
-    #if ODIN_INSPECTOR || ODIN_INSPECTOR_3
-        [Sirenix.OdinInspector.Button]
-        public void Send(){
-            Send(value);
-        }
-    #endif
+        #if ODIN_INSPECTOR || ODIN_INSPECTOR_3
+            [Sirenix.OdinInspector.Button("Send")]
+            public void SendButton(){
+                Send(value);
+            }
+        #endif
+
     }
 }
